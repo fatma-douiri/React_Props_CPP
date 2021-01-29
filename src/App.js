@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Profile from './Profile/Profile'
+import image from './images/pic.jpg'
 
 function App() {
+
+const data = {
+fullName: "Fatma Douiri",
+bio:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. A delectus molestias dolores cupiditate consectetur esse earum magnam, voluptatem quas dolorem libero facilis sit,Lorem ",
+profession:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. A delectus molestias dolores cupiditate consectetur esse earum magnam, voluptatem quas dolorem libero facilis sit",
+  };
+
+const alertName= () => alert(data.fullName);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+<Profile data={data} alertName={alertName}>
+  
+  <img src={image}  alt="ProfilePic"  style={{width:'200px', height:'200px'}} /> 
+  </Profile>
+  
+
     </div>
   );
 }
